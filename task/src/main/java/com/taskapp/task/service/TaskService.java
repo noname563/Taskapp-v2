@@ -25,4 +25,8 @@ public class TaskService {
     public List<Task> getTasksByUserId(Long userId) {
         return taskRepository.findByUserId(userId);
     }
+    public String deleteTask(Long taskId) {
+        taskRepository.deleteById(taskId);
+        return "Task deleted successfully for user ID: " + taskId;
+    }
 }
